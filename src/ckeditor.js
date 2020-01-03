@@ -31,6 +31,8 @@ import Indent from '@ckeditor/ckeditor5-indent/src/indent';
 import IndentBlock from '@ckeditor/ckeditor5-indent/src/indentblock';
 import Alignment from '@ckeditor/ckeditor5-alignment/src/alignment';
 import AutoSave from '@ckeditor/ckeditor5-autosave/src/autosave';
+import Strikethrough from '@ckeditor/ckeditor5-basic-styles/src/strikethrough';
+import Code from '@ckeditor/ckeditor5-basic-styles/src/code';
 
 export default class ClassicEditor extends ClassicEditorBase { }
 
@@ -60,7 +62,9 @@ ClassicEditor.builtinPlugins = [
 	Indent,
 	IndentBlock,
 	AutoSave,
-	Alignment
+	Alignment,
+	Strikethrough,
+	Code
 ];
 
 // Editor configuration.
@@ -89,7 +93,6 @@ ClassicEditor.defaultConfig = {
 			'insertTable',
 			'|',
 			'removeFormat',
-			''
 		]
 	},
 	heading: {
@@ -118,7 +121,7 @@ ClassicEditor.defaultConfig = {
 	simpleUpload: {
 		uploadUrl: '/uploads',
 		headers: {
-			'X-CSRF-TOKEN': document.querySelector( 'meta[name=\'csrf-token\']' ).getAttribute( 'content' ),
+			'X-CSRF-TOKEN': document.querySelector('meta[name=\'csrf-token\']').getAttribute('content'),
 		}
 	},
 	fontColor: {
